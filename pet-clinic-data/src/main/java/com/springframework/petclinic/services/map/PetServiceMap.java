@@ -4,9 +4,11 @@ import com.springframework.petclinic.model.Owner;
 import com.springframework.petclinic.model.Pet;
 import com.springframework.petclinic.services.CrudService;
 import com.springframework.petclinic.services.PetService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
+@Service
 public class PetServiceMap extends AbstractMapService<Pet, Long> implements PetService {
     @Override
     public Set<Pet> findAll() {
@@ -25,7 +27,7 @@ public class PetServiceMap extends AbstractMapService<Pet, Long> implements PetS
 
     @Override
     public Pet save(Pet object) {
-        return super.save(object.getId(),object);
+        return super.save(object);
     }
 
     @Override
